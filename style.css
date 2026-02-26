@@ -1,0 +1,625 @@
+:root {
+    --primary: #1A73E8;
+    --secondary: #673AB7;
+    --accent: #FFD740;
+    --text: #333333;
+    --light-bg: #F8F9FA;
+    --dark-bg: #121212;
+    --danger: #FF5252;
+    --success: #4CAF50;
+    --white: #FFFFFF;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Typography */
+.headline {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark-bg);
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.subheadline {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.section-title.impact {
+    font-size: 28px;
+    color: var(--danger);
+}
+
+/* Image Containers */
+.main-image-container {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #f0f0f0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main-mockup,
+.notebook-mockup {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.bonus-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+}
+
+.grid-img {
+    width: 100%;
+    aspect-ratio: 9 / 12;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* CTA Buttons */
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: var(--success);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 0 8px 0 #2E7D32;
+    margin: 20px 0;
+    transition: transform 0.1s;
+}
+
+.cta-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #2E7D32;
+}
+
+.cta-button.secondary {
+    background: var(--primary);
+    box-shadow: 0 8px 0 #1565C0;
+}
+
+.cta-button.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.microcopy {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Pain Section */
+.pain.dark {
+    background: var(--dark-bg);
+    color: var(--white);
+}
+
+.bullets {
+    list-style: none;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 300px;
+}
+
+.bullets li {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.closing-statement {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0;
+    color: var(--accent);
+}
+
+/* Solution Bullets */
+.check-bullets {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.check-bullets li {
+    padding: 8px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #EEE;
+}
+
+/* Snap Grid (Visual Proof) */
+.snap-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.snap-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.grid-item {
+    scroll-snap-align: start;
+    flex: 0 0 70%;
+}
+
+.img-box {
+    width: 100%;
+    aspect-ratio: 9 / 12;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #777;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Transformation Cards */
+.comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.card.before {
+    background: #FFEBEE;
+    border: 1px solid #FFCDD2;
+}
+
+.card.after {
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Bonus */
+.bonus {
+    background: #F3E5F5;
+}
+
+.bonus-item {
+    margin-bottom: 30px;
+}
+
+.bonus-item h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.value-stack {
+    padding: 25px;
+    background: var(--white);
+    border-radius: 15px;
+    border: 2px solid var(--secondary);
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.new-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+/* Offer */
+.offer {
+    background: #FFF9C4;
+}
+
+.price-strikethrough {
+    text-decoration: line-through;
+    font-size: 18px;
+    color: #777;
+}
+
+.price-label {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.big-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--dark-bg);
+}
+
+.big-price .currency {
+    font-size: 20px;
+    vertical-align: top;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.big-price .info {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.installment {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Pricing Plans - Standardized Mobile */
+.pricing-plans {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.plan-card {
+    background: var(--white);
+    padding: 25px 20px;
+    border-radius: 16px;
+    border: 1px solid #E0E0E0;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 100%;
+}
+
+.plan-card.premium {
+    border: 3px solid var(--secondary);
+    background: #FFF;
+}
+
+.best-value {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: var(--white);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 4px 8px rgba(103, 58, 183, 0.3);
+    z-index: 2;
+}
+
+.plan-name {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--dark-bg);
+}
+
+.plan-price {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 0;
+    color: var(--dark-bg);
+}
+
+.plan-price .currency {
+    font-size: 16px;
+    vertical-align: top;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.plan-price .info {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.installment {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+
+.plan-features {
+    list-style: none;
+    text-align: left;
+    margin: 15px 0 20px 0;
+    padding: 0;
+}
+
+.plan-features li {
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #F5F5F5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plan-features li.disabled {
+    color: #AAA;
+    text-decoration: none;
+    /* Removed strikethrough for cleaner look */
+    opacity: 0.6;
+}
+
+.cta-button.small {
+    padding: 14px;
+    font-size: 15px;
+    margin: 10px 0 0 0;
+    box-shadow: 0 4px 0 #1565C0;
+    opacity: 0.9;
+}
+
+.cta-button.big-cta {
+    padding: 24px;
+    font-size: 20px;
+}
+
+.strategic-hook {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.social-proof-plans {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 30px 0;
+    color: #444;
+}
+
+/* Guarantee */
+.badge-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #EEE;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.guarantee-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Conversion Elements */
+.pre-headline {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.emotional-trigger {
+    font-size: 15px;
+    font-style: italic;
+    color: #FFCDD2;
+    margin-bottom: 25px;
+}
+
+.bonus-desc {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+/* New Comparison Box */
+.comparison-box {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 1px solid #FFE082;
+    text-align: left;
+}
+
+.comparison-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.comparison-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background: #F5F5F5;
+    border-radius: 8px;
+}
+
+.comparison-item.invert {
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+}
+
+.or-divider {
+    text-align: center;
+    font-weight: 800;
+    color: #CCC;
+    margin: 10px 0;
+}
+
+.emotional-breakdown {
+    text-align: left;
+    margin: 30px 0;
+    display: inline-block;
+}
+
+.emotional-breakdown p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.guilt-trip {
+    margin: 20px 0;
+    font-size: 17px;
+}
+
+.transition-text {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.social-pressure {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+/* FAQ */
+.faq-list details {
+    background: #F9F9F9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Final CTA */
+.final-cta {
+    background: var(--dark-bg);
+    color: var(--white);
+}
+
+.countdown {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 20px 0;
+    font-family: monospace;
+}
